@@ -16,7 +16,11 @@ fn main() {
   let t1 = h1 * 60 + m1;
   let t2 = h2 * 60 + m2;
 
-  let t = if t2 > t1 { t2 - t1 } else { t1 - t2 + 24 * 60 };
+  let mut t = t2 - t1;
+
+  if t1 >= t2 {
+    t = 24 * 60 + t;
+  }
 
   let hours = t / 60;
   let minutes = t % 60;
