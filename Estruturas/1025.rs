@@ -40,18 +40,41 @@ fn main() {
     case += 1;
 
     for search in marbles_to_search {
-      let (found, index) = match marbles.binary_search(&search) {
-        Ok(index) => (true, index + 1),
-        Err(_) => (false, 0),
-      };
+      let (found, index) = pesquisa_binaria(&marbles, search);
 
       if found {
-        let final_index = if marbles[index - 1] == search { index - 1 } else { index };
-        println!("{} found at {}", search, final_index);
+        println!("{} found at {}", search, index);
       } else {
         println!("{} not found", search);
       }
     }
 
+  }
+}
+
+fn pesquisa_binaria(arr: &Vec<u32>, valor: u32) -> (bool, usize) {
+  let arr_len = arr.len();
+
+  let mut inicio = 0;
+  let mut fim = arr_len;
+
+  while inicio < fim {
+    let meio = (inicio + fim) / 2;
+    if arr[meio] < valor {
+      inicio = meio + 1;
+    }
+    else {
+      fim = meio;
+    }
+  }
+
+  if inicio >= arr_len {
+    return (false, 0);
+  }
+
+  if arr[inicio] == valor {
+    (true, inicio + 1)
+  } else {
+    (false, 0)
   }
 }
