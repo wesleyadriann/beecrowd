@@ -16,6 +16,5 @@ fn main() {
   let c = input_c.trim().parse::<i32>().unwrap();
   let d = input_d.trim().parse::<i32>().unwrap();
 
-
   println!("DIFERENCA = {}", a * b - c * d);
 }

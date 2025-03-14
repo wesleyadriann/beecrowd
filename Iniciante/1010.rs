@@ -16,6 +16,5 @@ fn main() {
   let item_2_qtd = item_2[1].parse::<f64>().unwrap();
   let item2_value = item_2[2].parse::<f64>().unwrap();
 
-
   println!("VALOR A PAGAR: R$ {:.2}", item_1_qtd * item_2_value + item_2_qtd * item2_value);
 }

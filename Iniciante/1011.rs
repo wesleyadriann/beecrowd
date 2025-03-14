@@ -9,6 +9,5 @@ fn main() {
 
   let raio = input.trim().parse::<f64>().unwrap();
 
-
   println!("VOLUME = {:.3}", (4.0/3.0) * PI * (raio * raio * raio));
 }

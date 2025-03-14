@@ -15,5 +15,4 @@ fn main() {
 
   println!("NUMBER = {}", number);
   println!("SALARY = U$ {:.2}", (salary * hours));
-
 }
