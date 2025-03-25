@@ -32,7 +32,7 @@ fn main() {
   stdin.read_line(&mut input).unwrap();
 
   println!("===========================");
-  println!(" REGISTER STATE");
+  println!("      REGISTER STATE       ");
   println!("===========================");
   println!("  Power On    : {}", power_on);
   println!("  Error       : {}", error);
