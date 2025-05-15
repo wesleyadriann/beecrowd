@@ -11,10 +11,10 @@ fn main() {
   };
 
   for _ in 0..n {
-    let mut input_f = String::new();
+    input.clear();
 
-    let values: Vec<u32> = match stdin.read_line(&mut input_f) {
-      Ok(_) => input_f.split_whitespace()
+    let values: Vec<u32> = match stdin.read_line(&mut input) {
+      Ok(_) => input.split_whitespace()
         .map(|x| x.parse().unwrap())
         .collect(),
       Err(_) => break,
