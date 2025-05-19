@@ -4,3 +4,4 @@
 *.out
 *.txt
 *.class
+.DS_Store
