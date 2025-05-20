@@ -3,24 +3,25 @@ use std::io;
 fn main() {
   let stdin = io::stdin();
 
-  let mut input = String::new();
+  let mut input = String::with_capacity(32);
 
   loop {
     input.clear();
 
-    let values: Vec<i32> = match stdin.read_line(&mut input) {
-      Ok(_) => {
-        let value = input.trim();
-        if value.len() == 0 {
-          break;
-        }
-        value.split_whitespace()
-          .map(|x| x.parse().unwrap())
-          .collect()
-      }
-      Err(_) => break,
+    if stdin.read_line(&mut input).unwrap() == 0 {
+      break;
     };
 
-    println!("{}", 2 * values[0] * values[1]);
+    let mut values = input.split_whitespace();
+
+    let x: i32 = values.next()
+      .and_then(|x| x.parse().ok())
+      .unwrap();
+
+    let y: i32 = values.next()  
+      .and_then(|x| x.parse().ok())
+      .unwrap();
+
+    println!("{}", 2 * x * y);
   }
 }
