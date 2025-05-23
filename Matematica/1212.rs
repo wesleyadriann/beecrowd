@@ -29,7 +29,7 @@ fn main() {
     let mut result: u32 = 0;
     let mut carry: u32 = 0;
 
-    while a > 0 && b > 0 {
+    while a > 0 || b > 0 {
       if (a % 10) + (b % 10) + carry > 9 {
         carry = 1;
         result += 1;
@@ -37,28 +37,6 @@ fn main() {
         carry = 0;
       }
       a /= 10;
-      b /= 10;
-    }
-
-    while a > 0 {
-      if a % 10 + carry > 9 {
-        carry = 1;
-        result += 1;
-      } else {
-        carry = 0;
-      }
-
-      a /= 10;
-    }
-
-    while b > 0 {
-      if b % 10 + carry > 9 {
-        carry = 1;
-        result += 1;
-      } else {
-        carry = 0
-      }
-
       b /= 10;
     }
 
