@@ -1,26 +1,31 @@
-use std::io;
+use std::io::{
+  self,
+  BufRead,
+  BufReader,
+};
 
 fn main() {
-  let stdin = io::stdin();
+  let mut reader = BufReader::new(io::stdin());
+  let mut input = String::with_capacity(12);
 
-  let mut input = String::new();
-
-  let n = match stdin.read_line(&mut input) {
+  let n = match reader.read_line(&mut input) {
     Ok(_) => input.trim().parse().unwrap(),
     Err(_) => return
   };
 
   for _ in 0..n {
     input.clear();
+    reader.read_line(&mut input).unwrap();
 
-    let values: Vec<u32> = match stdin.read_line(&mut input) {
-      Ok(_) => input.split_whitespace()
-        .map(|x| x.parse().unwrap())
-        .collect(),
-      Err(_) => break,
-    };
+    let mut values = input.split_whitespace();
 
-    let (f1, f2) = (values[0], values[1]);
+    let f1: u32 = values.next()
+      .and_then(|x| x.parse().ok())
+      .unwrap();
+
+    let f2: u32 = values.next()
+      .and_then(|x| x.parse().ok())
+      .unwrap();
 
     println!("{}", mdc(f1, f2));
   }
