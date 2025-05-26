@@ -7,7 +7,7 @@ let T = 0;
 let p = 0;
 
 while (p < lines.length) {
-    const N  = parseInt(lines[p++]);
+    const N = parseInt(lines[p++]);
 
     if(T) {
         console.log('');
