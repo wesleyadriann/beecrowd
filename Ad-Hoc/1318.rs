@@ -18,22 +18,25 @@ fn main() {
 
         let n: usize = values.next().and_then(|x| x.parse().ok()).unwrap();
 
-        let mut ingressos: Vec<u32> = Vec::with_capacity(n);
-        let mut duplicates: Vec<u32> = Vec::with_capacity(n);
+        let mut ingressos = vec![0; n];
 
         input.clear();
 
         reader.read_line(&mut input).unwrap();
         let mut t = input.split_whitespace();
 
-        while let Some(ti) = t.next().and_then(|x| x.parse::<u32>().ok()) {
-            if ingressos.contains(&ti) && !duplicates.contains(&ti) {
-                duplicates.push(ti);
-                continue;
-            }
-            ingressos.push(ti);
+        while let Some(ti) = t.next().and_then(|x| x.parse::<usize>().ok()) {
+            ingressos[ti - 1] = ingressos[ti - 1] + 1;
         }
 
-        println!("{}", duplicates.len());
+        let mut result = 0;
+
+        for value in ingressos {
+            if value > 1 {
+                result += 1;
+            }
+        }
+
+        println!("{}", result);
     }
 }
