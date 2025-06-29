@@ -6,3 +6,4 @@
 *.class
 .DS_Store
 rust-project.json
+/target/
