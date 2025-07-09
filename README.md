@@ -11,6 +11,7 @@
 </p>
 
 ## 📝 Descrição
+
 Soluções de problemas do site beecrowd/URI
 
 ## 🔍 Categorias
@@ -22,7 +23,7 @@ Soluções de problemas do site beecrowd/URI
 - [Matemática](./Matematica)
 - [Sql](./Sql)
 
-## Meu Perfil
+## 👤 Meu Perfil
 
 | <img src="https://avatars.githubusercontent.com/u/31211915" alt="Imagem de perfil" width="150"> | <div ><span>wesleyadriann</span> <br/> <a href="https://judge.beecrowd.com/pt/profile/132301">https://judge.beecrowd.com/pt/profile/132301 </a></div> |
 |-----------------------------------------------------------------------------|:---------------------------------------------------------------------------------|
