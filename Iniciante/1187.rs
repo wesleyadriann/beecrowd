@@ -10,17 +10,20 @@ fn main() {
 
     let mut result = 0.0;
 
-    let mut skip: usize = 0;
-    for _ in 0..12 {
-        skip += 1;
-        let values = lines.by_ref().skip(skip).take(12 - skip);
+    let mut skip = 1;
+    let mut take = 10;
+    for _ in 0..5 {
+        let values = lines.by_ref().skip(skip).take(take);
         for value in values {
             result += value.unwrap().trim().parse::<f64>().unwrap();
         }
+        skip += 2;
+        take -= 2;
     }
 
     if op == "M" {
-        result /= 66.0;
+        result /= 30.0;
     }
+
     println!("{:.1}", result);
 }
