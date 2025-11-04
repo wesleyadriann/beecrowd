@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/github/last-commit/wesleyadriann/beecrowd?style=flat-square" />
   <img src="https://img.shields.io/github/license/wesleyadriann/beecrowd?style=flat-square" />
   <img src="https://img.shields.io/github/repo-size/wesleyadriann/beecrowd?style=flat-square" />
+    <img src="https://wakatime.com/badge/github/wesleyadriann/beecrowd.svg" />
 </p>
 
 ## 📝 Descrição
