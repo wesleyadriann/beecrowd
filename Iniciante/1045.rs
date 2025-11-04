@@ -8,7 +8,7 @@ fn main() {
   let mut values: Vec<f64> = input.split_whitespace()
     .map(|x| x.parse().unwrap()) 
     .collect(); 
-  
+
   values.sort_by(|a, b| b.partial_cmp(a).unwrap()); 
 
   let a = values[0];
