@@ -15,9 +15,14 @@ var nomes = [
 
 var total = 0;
 
-lines.split(" ").forEach((curr) => {
-  total += parseInt(curr);
-});
+// lines.split(" ").forEach((curr) => {
+//   total += parseInt(curr);
+// });
+//
+for (let i = 0; i <= lines.length; i++) {
+  let number = parseInt(lines[i]);
+  if (!isNaN(number)) total += number;
+}
 
 var result = total % 9;
 
