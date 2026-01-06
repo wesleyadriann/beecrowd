@@ -4,19 +4,19 @@ fn main() {
 
   loop {
     let mut input = String::new();
-  
+
     io::stdin().read_line(&mut input).unwrap();
-  
+
     let values: Vec<u32> = input.split_whitespace()
       .map(|x| x.parse().unwrap())
       .collect();
-  
+
     if values.len() == 0 {
       break;
     }
 
     let (x, y) = (values[0], values[1]);
-  
+
     println!("{}", x ^ y);
 
     // manual bit xor
