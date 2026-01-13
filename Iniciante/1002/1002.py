@@ -3,6 +3,6 @@
 PI = 3.14159
 
 r = float(input())
-result = PI * (r * r);
+result = PI * (r * r)
 
-print(f"A={result:.4f}");
+print(f"A={result:.4f}")
